@@ -1,6 +1,6 @@
 /* eslint no-param-reassign: 0 */
 // This config is for building dist files
-const getWebpackConfig = require('antd-tools/lib/getWebpackConfig');
+const getWebpackConfig = require('@clinia/design-tools/lib/getWebpackConfig');
 
 const { webpack } = getWebpackConfig;
 

@@ -24,7 +24,8 @@ import '../../spin/style';
 import '../../pagination/style';
     `.trim();
 
-    expect(cssInjection(libContent)).toEqual(`
+    expect(cssInjection(libContent)).toEqual(
+      `
 "use strict";
 require("../../style/index.css");
 require("./index.css");
@@ -34,8 +35,10 @@ require("../../checkbox/style/css");
 require("../../dropdown/style/css");
 require("../../spin/style/css");
 require("../../pagination/style/css");
-    `.trim());
-    expect(cssInjection(esContent)).toEqual(`
+    `.trim()
+    );
+    expect(cssInjection(esContent)).toEqual(
+      `
 import '../../style/index.css';
 import './index.css';
 
@@ -44,6 +47,7 @@ import '../../checkbox/style/css';
 import '../../dropdown/style/css';
 import '../../spin/style/css';
 import '../../pagination/style/css';
-    `.trim());
+    `.trim()
+    );
   });
 });

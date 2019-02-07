@@ -1,11 +1,10 @@
 {
-  "name": "antd",
-  "version": "3.13.1",
-  "title": "Ant Design",
+  "name": "@clinia/uikit",
+  "version": "0.2.0-alpha.0",
+  "title": "Clinia Design",
   "description": "An enterprise-class UI design language and React-based implementation",
-  "homepage": "http://ant.design/",
   "keywords": [
-    "ant",
+    "clinia",
     "design",
     "react",
     "react-component",
@@ -16,14 +15,14 @@
     "frontend"
   ],
   "contributors": [
-    "ant"
+    "ant",
+    "clinia"
   ],
+  "author": "Etienne Soulard-Geoffrion <etienne@clinia.ca>",
+  "homepage": "https://github.com/clinia/clinia-design",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ant-design/ant-design"
-  },
-  "bugs": {
-    "url": "https://github.com/ant-design/ant-design/issues"
+    "url": "https://github.com/clinia/clinia-design/tree/master/packages/clinia-design-uikit"
   },
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -37,6 +36,9 @@
   "peerDependencies": {
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "@ant-design/icons": "~1.1.16",
@@ -92,6 +94,7 @@
   },
   "devDependencies": {
     "@ant-design/colors": "^2.0.0",
+    "@clinia/design-tools": "^0.2.0-alpha.0",
     "@sentry/browser": "^4.5.2",
     "@types/classnames": "^2.2.6",
     "@types/prop-types": "^15.5.6",
@@ -103,7 +106,6 @@
     "@yesmeck/offline-plugin": "^5.0.5",
     "ansi-styles": "^3.2.1",
     "antd-theme-generator": "^1.1.4",
-    "antd-tools": "^7.0.1",
     "babel-eslint": "^10.0.1",
     "bisheng": "^1.1.0",
     "bisheng-plugin-antd": "^1.0.0",
@@ -188,27 +190,27 @@
     "test-node": "jest --config .jest.node.js --no-cache",
     "test-all": "./scripts/test-all.sh",
     "lint": "npm run lint:ts && npm run lint:es && npm run lint:demo && npm run lint:style",
-    "lint:ts": "npm run tsc && antd-tools run ts-lint",
+    "lint:ts": "npm run tsc && cliniad-tools run ts-lint",
     "lint:es": "eslint tests site scripts components ./.*.js ./webpack.config.js --ext '.js,.jsx'",
     "lint:md": "remark components/",
     "lint:demo": "cross-env RUN_ENV=DEMO eslint components/*/demo/*.md --ext '.md'",
     "lint:style": "stylelint \"{site,components}/**/*.less\" --syntax less",
-    "lint-fix:ts": "npm run tsc && antd-tools run ts-lint-fix",
+    "lint-fix:ts": "npm run tsc && cliniad-tools run ts-lint-fix",
     "lint-fix": "npm run lint-fix:code && npm run lint-fix:demo",
     "lint-fix:code": "eslint --fix tests site scripts components ./.*.js ./webpack.config.js --ext '.js,.jsx'",
     "lint-fix:demo": "eslint-tinker ./components/*/demo/*.md",
     "sort-api": "node ./scripts/sort-api-table.js",
-    "dist": "antd-tools run dist",
-    "compile": "antd-tools run compile",
+    "dist": "cliniad-tools run dist",
+    "compile": "cliniad-tools run compile",
     "tsc": "tsc",
     "start": "rimraf _site && mkdir _site && node ./scripts/generateColorLess.js && cross-env NODE_ENV=development bisheng start -c ./site/bisheng.config.js",
     "start:preact": "node ./scripts/generateColorLess.js && cross-env NODE_ENV=development REACT_ENV=preact bisheng start -c ./site/bisheng.config.js",
     "site": "cross-env NODE_ENV=production bisheng build --ssr -c ./site/bisheng.config.js && node ./scripts/generateColorLess.js",
-    "predeploy": "antd-tools run clean && npm run site && cp netlify.toml _site && cp -r .circleci _site",
+    "predeploy": "cliniad-tools run clean && npm run site && cp netlify.toml _site && cp -r .circleci _site",
     "deploy": "bisheng gh-pages --push-only",
     "deploy:china-mirror": "git checkout gh-pages && git pull origin gh-pages && git push git@gitee.com:ant-design/ant-design.git gh-pages",
-    "pub": "antd-tools run pub",
-    "prepublish": "antd-tools run guard",
+    "pub": "cliniad-tools run pub",
+    "prepublish": "cliniad-tools run guard",
     "pre-publish": "npm run test-all && node ./scripts/prepub",
     "authors": "git log --format='%aN <%aE>' | sort -u | grep -v 'users.noreply.github.com' | grep -v 'gitter.im' | grep -v '.local>' | grep -v 'alibaba-inc.com' | grep -v 'alipay.com' | grep -v 'taobao.com' > AUTHORS.txt",
     "lint-staged": "lint-staged",
@@ -217,9 +219,6 @@
     "lint-staged:demo": "cross-env RUN_ENV=DEMO eslint --ext '.md'",
     "prettier": "node ./scripts/prettier.js"
   },
-  "pre-commit": [
-    "lint-staged"
-  ],
   "lint-staged": {
     "components/**/*.tsx": [
       "npm run lint-staged:ts",
@@ -245,5 +244,6 @@
     "es/**/style/*",
     "lib/**/style/*",
     "*.less"
-  ]
+  ],
+  "gitHead": "363346dc793b6af7be25971ce893020811449c81"
 }
