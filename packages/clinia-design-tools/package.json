@@ -12,6 +12,9 @@
     "type": "git",
     "url": "git@github.com:clinia/clinia-design.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "bin": {
     "antd-tools": "./bin/antd-tools.js",
@@ -105,5 +108,6 @@
   "pre-commit": [
     "lint",
     "prettier"
-  ]
+  ],
+  "gitHead": "321361c31764182b82c3b30b274c2b460a0c365e"
 }
