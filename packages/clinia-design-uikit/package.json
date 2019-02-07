@@ -1,6 +1,6 @@
 {
   "name": "antd",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.1-alpha.0",
   "title": "Ant Design",
   "description": "An enterprise-class UI design language and React-based implementation",
   "homepage": "http://ant.design/",
@@ -92,7 +92,7 @@
   },
   "devDependencies": {
     "@ant-design/colors": "^2.0.0",
-    "@clinia/design-tools": "^0.1.0-alpha.0",
+    "@clinia/design-tools": "^0.1.1-alpha.0",
     "@sentry/browser": "^4.5.2",
     "@types/classnames": "^2.2.6",
     "@types/prop-types": "^15.5.6",
