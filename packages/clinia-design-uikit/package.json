@@ -1,6 +1,6 @@
 {
   "name": "antd",
-  "version": "3.13.1",
+  "version": "0.0.0",
   "title": "Ant Design",
   "description": "An enterprise-class UI design language and React-based implementation",
   "homepage": "http://ant.design/",
@@ -92,6 +92,7 @@
   },
   "devDependencies": {
     "@ant-design/colors": "^2.0.0",
+    "@clinia/design-tools": "^0.0.0",
     "@sentry/browser": "^4.5.2",
     "@types/classnames": "^2.2.6",
     "@types/prop-types": "^15.5.6",
@@ -103,7 +104,6 @@
     "@yesmeck/offline-plugin": "^5.0.5",
     "ansi-styles": "^3.2.1",
     "antd-theme-generator": "^1.1.4",
-    "antd-tools": "^7.0.1",
     "babel-eslint": "^10.0.1",
     "bisheng": "^1.1.0",
     "bisheng-plugin-antd": "^1.0.0",

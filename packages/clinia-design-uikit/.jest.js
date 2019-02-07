@@ -12,10 +12,10 @@ module.exports = {
   modulePathIgnorePatterns: ['/_site/'],
   testPathIgnorePatterns: ['/node_modules/', 'dekko', 'node'],
   transform: {
-    '\\.tsx?$': './node_modules/antd-tools/lib/jest/codePreprocessor',
-    '\\.js$': './node_modules/antd-tools/lib/jest/codePreprocessor',
-    '\\.md$': './node_modules/antd-tools/lib/jest/demoPreprocessor',
-    '\\.(jpg|png|gif|svg)$': './node_modules/antd-tools/lib/jest/imagePreprocessor',
+    '\\.tsx?$': './node_modules/@clinia/design-tools/lib/jest/codePreprocessor',
+    '\\.js$': './node_modules/@clinia/design-tools/lib/jest/codePreprocessor',
+    '\\.md$': './node_modules/@clinia/design-tools/lib/jest/demoPreprocessor',
+    '\\.(jpg|png|gif|svg)$': './node_modules/@clinia/design-tools/lib/jest/imagePreprocessor',
   },
   testRegex: `${libDir === 'dist' ? 'demo' : '.*'}\\.test\\.js$`,
   collectCoverageFrom: [
