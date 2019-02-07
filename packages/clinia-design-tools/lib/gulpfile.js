@@ -276,7 +276,7 @@ function compile(modules) {
 }
 
 function publish(tagString, done) {
-  let args = ['publish', '--with-antd-tools', '--access=public'];
+  let args = ['publish', '--with-cliniad-tools', '--access=public'];
   if (tagString) {
     args = args.concat(['--tag', tagString]);
   }
@@ -369,7 +369,7 @@ gulp.task(
     const npmArgs = getNpmArgs();
     if (npmArgs) {
       for (let arg = npmArgs.shift(); arg; arg = npmArgs.shift()) {
-        if (/^pu(b(l(i(sh?)?)?)?)?$/.test(arg) && npmArgs.indexOf('--with-antd-tools') < 0) {
+        if (/^pu(b(l(i(sh?)?)?)?)?$/.test(arg) && npmArgs.indexOf('--with-cliniad-tools') < 0) {
           reportError();
           done(1);
           return;

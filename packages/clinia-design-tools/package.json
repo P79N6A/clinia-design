@@ -6,19 +6,19 @@
     "react",
     "tools"
   ],
-  "homepage": "http://github.com/ant-design/antd-tools",
   "author": "Etienne Soulard-Geoffrion <etienne@clinia.ca>",
+  "homepage": "https://github.com/clinia/clinia-design",
   "repository": {
     "type": "git",
-    "url": "git@github.com:clinia/clinia-design.git"
+    "url": "https://github.com/clinia/clinia-design/tree/master/packages/clinia-design-uikit"
   },
   "publishConfig": {
     "access": "public"
   },
   "license": "MIT",
   "bin": {
-    "antd-tools": "./bin/antd-tools.js",
-    "antd-tools-run": "./bin/antd-tools-run.js"
+    "cliniad-tools": "./bin/cliniad-tools.js",
+    "cliniad-tools-run": "./bin/cliniad-tools-run.js"
   },
   "scripts": {
     "pub": "git push origin && npm publish",
@@ -109,5 +109,5 @@
     "lint",
     "prettier"
   ],
-  "gitHead": "321361c31764182b82c3b30b274c2b460a0c365e"
+  "gitHead": "363346dc793b6af7be25971ce893020811449c81"
 }

@@ -14,10 +14,10 @@ function reportNoConfig() {
     chalk.bgRed('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
   );
   console.log(
-    chalk.bgRed("!! Unable to setup antd-tools: project's package.json either missing !!")
+    chalk.bgRed("!! Unable to setup @clinia/design-tools: project's package.json either missing !!")
   );
   console.log(
-    chalk.bgRed('!! or malformed. Run `npm init` and then reinstall antd-tools.       !!')
+    chalk.bgRed('!! or malformed. Run `npm init` and then reinstall @clinia/design-tools.       !!')
   );
   console.log(
     chalk.bgRed('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
@@ -26,7 +26,9 @@ function reportNoConfig() {
 
 function reportCompletion() {
   console.log(chalk.bgGreen('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'));
-  console.log(chalk.bgGreen('!! antd-tools was successfully installed for the project. !!'));
+  console.log(
+    chalk.bgGreen('!! @clinia/design-tools was successfully installed for the project. !!')
+  );
   console.log(chalk.bgGreen('!! Use `npm run pub` command for publishing.       !!'));
   console.log(chalk.bgGreen('!! publishing configuration.                                  !!'));
   console.log(chalk.bgGreen('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'));
@@ -42,21 +44,21 @@ function addConfigHooks(cfg, projectDir) {
   }
 
   cfg.scripts = Object.assign(cfg.scripts, {
-    dist: 'antd-tools run dist',
-    compile: 'antd-tools run compile',
-    clean: 'antd-tools run clean',
-    start: 'antd-tools run start',
-    site: 'antd-tools run site',
-    deploy: 'antd-tools run update-self && antd-tools run deploy',
-    'just-deploy': 'antd-tools run just-deploy',
-    pub: 'antd-tools run update-self && antd-tools run pub',
+    dist: 'cliniad-tools run dist',
+    compile: 'cliniad-tools run compile',
+    clean: 'cliniad-tools run clean',
+    start: 'cliniad-tools run start',
+    site: 'cliniad-tools run site',
+    deploy: 'cliniad-tools run update-self && cliniad-tools run deploy',
+    'just-deploy': 'cliniad-tools run just-deploy',
+    pub: 'cliniad-tools run update-self && cliniad-tools run pub',
   });
 
   if (cfg.scripts.prepublish) {
     cfg.scripts['pre-publish'] = cfg.scripts.prepublish;
   }
 
-  cfg.scripts.prepublish = 'antd-tools run guard';
+  cfg.scripts.prepublish = 'cliniad-tools run guard';
 
   writeFile(pathJoin(projectDir, 'package.json'), JSON.stringify(cfg, null, 2));
 
@@ -70,11 +72,11 @@ function init() {
   if (!testMode) {
     const npmArgs = getNpmArgs();
 
-    if (!npmArgs || !npmArgs.some(arg => /^antd-tools(@\d+\.\d+.\d+)?$/.test(arg))) {
+    if (!npmArgs || !npmArgs.some(arg => /^cliniad-tools(@\d+\.\d+.\d+)?$/.test(arg))) {
       return;
     }
   }
-  // NOTE: <projectDir>/node_modules/antd-tools/lib
+  // NOTE: <projectDir>/node_modules/@clinia/design-tools/lib
   const projectDir = pathJoin(__dirname, '../../../');
 
   const cfg = require(path.join(projectDir, 'package.json'));
